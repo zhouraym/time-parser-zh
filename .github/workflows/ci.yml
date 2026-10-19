@@ -39,7 +39,8 @@ jobs:
       - name: Install built wheel
         run: python -c "import glob, subprocess, sys; subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--force-reinstall', '--no-deps', *glob.glob('dist/*.whl')])"
       - name: Run example against installed package
-        run: python -I examples/basic_usage.py
+        # Isolated mode ignores PYTHON* environment variables.
+        run: python -I -X utf8 examples/basic_usage.py
       - name: Upload distribution packages
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13'
         uses: actions/upload-artifact@v7
