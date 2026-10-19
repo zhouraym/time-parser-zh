@@ -10,7 +10,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import (
+from time_parser_zh import (
     ComparisonRange,
     DateRange,
     extract_comparison_range,

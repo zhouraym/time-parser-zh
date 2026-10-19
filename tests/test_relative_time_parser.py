@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import RelativeTime, extract_date_range_v2, extract_relative_time
+from time_parser_zh import RelativeTime, extract_date_range_v2, extract_relative_time
 
 ANCHOR = datetime(2026, 8, 11, 12, 0)
 

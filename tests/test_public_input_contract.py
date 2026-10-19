@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import (
+from time_parser_zh import (
     extract_ambiguous_temporal,
     extract_comparison_range,
     extract_date_range,

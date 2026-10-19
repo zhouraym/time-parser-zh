@@ -5,7 +5,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import ComparisonRange, DateRange, extract_comparison_range
+from time_parser_zh import ComparisonRange, DateRange, extract_comparison_range
 
 
 def dr(start='2026-08-01', end='2026-08-09', **kw):
@@ -106,11 +106,11 @@ class TestRepr:
 
 class TestExports:
     def test_exported_from_package_root(self):
-        import zh_time_parser
-        assert 'ComparisonRange' in zh_time_parser.__all__
-        assert 'extract_comparison_range' in zh_time_parser.__all__
+        import time_parser_zh
+        assert 'ComparisonRange' in time_parser_zh.__all__
+        assert 'extract_comparison_range' in time_parser_zh.__all__
 
     def test_no_v3_alias(self):
         """不得提供 extract_date_range_v3 这个命名。"""
-        import zh_time_parser
-        assert not hasattr(zh_time_parser, 'extract_date_range_v3')
+        import time_parser_zh
+        assert not hasattr(time_parser_zh, 'extract_date_range_v3')

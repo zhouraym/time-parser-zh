@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import extract_date_range_v2
+from time_parser_zh import extract_date_range_v2
 
 TODAY = datetime(2026, 8, 11)
 

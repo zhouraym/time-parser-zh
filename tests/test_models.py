@@ -8,7 +8,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import DateRange, extract_date_range_v2
+from time_parser_zh import DateRange, extract_date_range_v2
 
 FIXED_TODAY = datetime(2026, 5, 24)
 

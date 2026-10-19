@@ -4,7 +4,7 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import TemporalBoundary, extract_date_range_v2, extract_temporal_boundary
+from time_parser_zh import TemporalBoundary, extract_date_range_v2, extract_temporal_boundary
 
 TODAY = datetime(2026, 8, 11, 12, 0)  # 周二
 

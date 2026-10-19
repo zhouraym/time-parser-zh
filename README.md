@@ -7,7 +7,7 @@ A pure Python parser for Chinese natural language date and time expressions.
 - 纯 Python 标准库实现，运行时无第三方依赖。
 - 日期范围、日期时刻、时刻范围、相对偏移、同比与环比使用各自的结构化接口。
 - 支持传入基准时刻 `today`，便于复现结果与编写测试。
-- Python 3.10+。项目名为 `time-parser-zh`，Python 导入包名为 `zh_time_parser`。
+- Python 3.10+。项目名为 `time-parser-zh`，Python 导入包名为 `time_parser_zh`。
 
 ## 安装
 
@@ -27,7 +27,7 @@ python -m pip install -e ".[dev]"
 
 ```python
 from datetime import datetime
-from zh_time_parser import extract_date_range_v2, extract_datetime_point
+from time_parser_zh import extract_date_range_v2, extract_datetime_point
 
 today = datetime(2026, 10, 19, 15, 30)
 
@@ -44,7 +44,7 @@ print(point.datetime)
 
 ```python
 from datetime import datetime
-from zh_time_parser import extract_comparison_range
+from time_parser_zh import extract_comparison_range
 
 result = extract_comparison_range("Q2同比", today=datetime(2026, 10, 19))
 if result is not None:
@@ -95,10 +95,27 @@ python -m build
 python -m twine check dist/*
 ```
 
-GitHub Actions 配置了 Linux / Windows 与 Python 3.10–3.13 的测试、构建、分发元数据检查和 wheel 安装验证。流水线不会发布包。
+GitHub Actions 配置了 Linux / Windows 与 Python 3.10–3.13 的测试、构建、分发元数据检查和 wheel 安装验证。构建产物可在 Actions 运行页面的 `distributions` 附件中下载。
+
+## 发布 GitHub Release
+
+先提交并推送代码，再推送与 `time_parser_zh.__version__` 一致的版本标签。例如当前版本为 `1.0.0`：
+
+```bash
+git tag -a v1.0.0 -m "Release v1.0.0"
+git push origin v1.0.0
+```
+
+所有测试与构建检查通过后，GitHub Actions 自动创建 Release，并附上 `.whl` 安装包和 `.tar.gz` 源码包。标签与包版本不一致时会停止发布。此流程不发布到 PyPI。
+
+下载 Release 中的 wheel 后即可安装：
+
+```bash
+python -m pip install time_parser_zh-1.0.0-py3-none-any.whl
+```
 
 ```text
-src/zh_time_parser/     解析器和数据模型
+src/time_parser_zh/     解析器和数据模型
 tests/                 上游测试与本项目回归测试
 examples/              可运行的固定日期示例
 .github/workflows/     持续集成配置

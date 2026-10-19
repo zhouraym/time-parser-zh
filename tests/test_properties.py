@@ -5,7 +5,7 @@ from datetime import datetime
 from hypothesis import HealthCheck, given, settings
 from hypothesis import strategies as st
 
-from zh_time_parser import (
+from time_parser_zh import (
     DateRange,
     extract_ambiguous_temporal,
     extract_comparison_range,

@@ -13,7 +13,7 @@ DateRange 主契约与完整规则回归 —— 验证结构化 API 和旧 API �
 
 from datetime import datetime
 
-from zh_time_parser import (
+from time_parser_zh import (
     DateRange,  # 数据类
     extract_date_range,  # 旧 API（向后兼容）
     extract_date_range_v2,  # 新 API（推荐）

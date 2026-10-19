@@ -34,10 +34,10 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.dynamic]
-version = {attr = "zh_time_parser.__version__"}
+version = {attr = "time_parser_zh.__version__"}
 
 [tool.setuptools.package-data]
-zh_time_parser = ["py.typed"]
+time_parser_zh = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

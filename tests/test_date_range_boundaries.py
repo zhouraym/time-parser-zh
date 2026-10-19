@@ -5,7 +5,7 @@ from typing import Tuple
 
 import pytest
 
-from zh_time_parser import extract_date_range_v2
+from time_parser_zh import extract_date_range_v2
 
 
 @pytest.mark.parametrize(

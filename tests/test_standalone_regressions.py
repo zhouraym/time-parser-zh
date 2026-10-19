@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pytest
 
-from zh_time_parser import extract_date_range_v2, extract_datetime_point
+from time_parser_zh import extract_date_range_v2, extract_datetime_point
 
 
 TODAY = datetime(2026, 10, 19, 15, 30)
@@ -121,12 +121,12 @@ def test_import_without_site_packages() -> None:
 import sys
 from datetime import datetime
 sys.path.insert(0, sys.argv[1])
-import zh_time_parser
+import time_parser_zh
 assert 'services' not in sys.modules
-for name in zh_time_parser.__all__:
-    assert hasattr(zh_time_parser, name), name
-assert zh_time_parser.extract_date_range_v2('去年8月', today=datetime(2026, 10, 19)).to_tuple() == ('2025-08-01', '2025-08-31')
-assert zh_time_parser.extract_datetime_point('明天下午3点', today=datetime(2026, 10, 19)).datetime == '2026-10-20 15:00:00'
+for name in time_parser_zh.__all__:
+    assert hasattr(time_parser_zh, name), name
+assert time_parser_zh.extract_date_range_v2('去年8月', today=datetime(2026, 10, 19)).to_tuple() == ('2025-08-01', '2025-08-31')
+assert time_parser_zh.extract_datetime_point('明天下午3点', today=datetime(2026, 10, 19)).datetime == '2026-10-20 15:00:00'
 """
     completed = subprocess.run(
         [sys.executable, "-I", "-S", "-c", code, str(package_parent)],

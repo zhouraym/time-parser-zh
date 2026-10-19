@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from zh_time_parser import (
+from time_parser_zh import (
     extract_date_range_v2,
     extract_datetime_point,
     extract_datetime_range,

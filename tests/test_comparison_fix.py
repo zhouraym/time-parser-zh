@@ -11,13 +11,13 @@ from datetime import datetime
 
 import pytest
 
-from zh_time_parser import (
+from time_parser_zh import (
     ComparisonRange,
     DateRange,
     extract_comparison_range,
     extract_date_range_v2,
 )
-from zh_time_parser.comparison_parser import _detect_comparison_type
+from time_parser_zh.comparison_parser import _detect_comparison_type
 
 TODAY = datetime(2026, 8, 9)
 

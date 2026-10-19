@@ -7,7 +7,7 @@ DateRange 补充冒烟测试 —— 用不同锚点覆盖跨月、跨年和组�
 """
 from datetime import datetime
 
-from zh_time_parser import extract_date_range_v2
+from time_parser_zh import extract_date_range_v2
 
 # 固定测试日期：2026-06-23（周二）
 TODAY = datetime(2026, 6, 23)
